@@ -39,6 +39,11 @@ collapsible:
   default: false
   description:
     en: 'Allow the banner to be expanded and collapsed by users'
+collapse_on_change:
+  type: bool
+  default: false
+  description:
+    en: 'Collapse when a page changed event occurs'
 default_collapsed_state:
   type: enum
   default: collapsed

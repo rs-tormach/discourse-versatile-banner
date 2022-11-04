@@ -84,6 +84,7 @@ api.createWidget("banner-box-widget", {
 
 api.decorateWidget('banner-box-widget:after', helper => {
   helper.widget.appEvents.on('page:changed', () => {
+    if (settings.collapse_on_change) toggleState = "collapsed";
     helper.widget.scheduleRerender();
   });
 });
