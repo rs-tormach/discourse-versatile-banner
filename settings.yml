@@ -122,6 +122,26 @@ secondary_text_color_dark:
   default: ""
   description:
     en: 'The text color of the icon and text headings, and the button background color when system dark mode is detected.'
+action_text_color:
+  type: string
+  default: "#646464"
+  description:
+    en: 'The text color of the close and toggle label text.'
+action_text_color_dark:
+  type: string
+  default: "#646464"
+  description:
+    en: 'The text color of the close and toggle label text.' when system dark mode is detected.'
+action_text_hover_color:
+  type: string
+  default: "#222222"
+  description:
+    en: 'The hover-text color of the close and toggle label text.'
+action_text_hover_color_dark:
+  type: string
+  default: "#222222"
+  description:
+    en: 'The hover-text color of the close and toggle label text.' when system dark mode is detected.'
 link_text_color:
   type: string
   default: "#0f82af"
