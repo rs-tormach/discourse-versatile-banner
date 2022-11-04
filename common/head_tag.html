@@ -85,11 +85,6 @@ api.createWidget("banner-box-widget", {
 api.decorateWidget('banner-box-widget:after', helper => {
   helper.widget.appEvents.on('page:changed', () => {
     if (settings.collapse_on_change) {
-      console.log('page:changed fired!!');
-      console.log(toggleState);
-      toggleState = (toggleState === "expanded") ? "collapsed" : "expanded";
-      console.log(toggleState);
-      console.log(toggleState === "expanded");
       if (toggleState === "expanded") {
         $("#banner-content_wrap").slideToggle();
         toggleState = "collapsed";
