@@ -88,7 +88,18 @@ api.decorateWidget('banner-box-widget:after', helper => {
       if (toggleState === "expanded") {
         $("#banner-content_wrap").slideToggle();
         toggleState = "collapsed";
-        cookie("banner_collapsed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
+        
+        if(cookieExpDate) {
+          let bannerState;
+          if(cookie("banner_collapsed")) {
+            bannerState = JSON.parse(cookie('banner_collapsed'));
+            bannerState.name = settings.cookie_name;
+            bannerState.collapsed = "true";
+          } else {
+            bannerState = { name: settings.cookie_name, collapsed: "true" }
+          }
+          cookie("banner_collapsed", JSON.stringify(bannerState), { expires: cookieExpDate, path: '/' });
+        }
       }
     }
     helper.widget.scheduleRerender();
