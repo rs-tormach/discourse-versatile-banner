@@ -84,7 +84,14 @@ api.createWidget("banner-box-widget", {
 
 api.decorateWidget('banner-box-widget:after', helper => {
   helper.widget.appEvents.on('page:changed', () => {
-    if (settings.collapse_on_change) toggleState = "collapsed";
+    if (settings.collapse_on_change) {
+      console.log('page:changed fired!!');
+      toggleState = (toggleState === "expanded") ? "collapsed" : "expanded";
+      if (toggleState === "expanded") {
+        $("#banner-content_wrap").slideToggle();
+      toggleState = "collapsed";
+      }
+    }
     helper.widget.scheduleRerender();
   });
 });
