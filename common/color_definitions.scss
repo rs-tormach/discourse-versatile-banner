@@ -15,8 +15,8 @@ $bg-img: url(dark-light-choose($banner_background_image, dark-if-set($banner_bac
   --banner-bg-color: #{$bg-color};
   --banner-primary-text: #{$primary-text};
   --banner-secondary-text: #{$secondary-text};
-  --banner-action-text: ${$action-text};
-  --banner-action-text-hover: ${$action-text-hover};
+  --banner-action-text: #{$action-text};
+  --banner-action-text-hover: #{$action-text-hover};
   --banner-link-text: #{$link-text};
   --banner-bg-img: #{$bg-img};
 }
