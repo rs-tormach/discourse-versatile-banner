@@ -116,7 +116,7 @@ api.createWidget("banner-button-container-widget", {
         this.attach("button", {
           label: themePrefix("close.label"),
           title: themePrefix("close.title"),
-          icon: "times",
+          icon: "xmark",
           action: "buttonPressed",
           actionParam: "close",
           className: "close"
@@ -246,12 +246,12 @@ api.createWidget("banner-content-widget", {
 
 <script type="text/x-handlebars" data-template-name="/connectors/below-site-header/banner-themes">
   {{#if (theme-setting 'show_for_members')}}
-    {{#if currentUser}}
+    {{#if this.currentUser}}
       {{plugin-outlet name="custom-banner" connectorTagName="div"}}
     {{/if}}
   {{/if}}
   {{#if (theme-setting 'show_for_anon')}}
-    {{#unless currentUser}}
+    {{#unless this.currentUser}}
       {{plugin-outlet name="custom-banner" connectorTagName="div"}}
     {{/unless}}
   {{/if}}
